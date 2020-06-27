@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  /* border: 2px solid black; */
+  background-color: yellow;
+  padding: 15px;
+}
+.header .logo {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: cursive;
+  box-shadow: 2px 2px 2px 2px black;
+}
+.header .logo h1 {
+  text-align: center;
+  /* margin: auto; */
+}
+.note {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 450px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 2px black;
+}
+.note input {
+  margin: 10px;
+  width: 98%;
+  padding: 10px 10px;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+}
+.note textarea {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 98%;
+  height: 110px;
+  padding: 2px 10px;
+  outline: none;
+}
+.note .MuiSvgIcon-root {
+  /* border: none; */
+  /* background-color: yellow; */
+  /* color: black; */
+  /* border-radius: 33px; */
+  font-size: 2.5rem;
+  position: relative;
+  bottom: 0px;
+  top: 0px;
+  right: -195px;
+  outline: none;
+  cursor: pointer;
+}
+.note .MuiSvgIcon-root:hover{
+  color: blue;
+}
+.notes {
+  width: 15%;
+  overflow: hidden;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 25px 5px;
+  text-transform: capitalize;
+}
+.notes .MuiSvgIcon-root {
+  position: relative;
+  top: 10px;
+  right: -146px;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+.notes button:hover{
+  background-color: brown;
+}
+#title::placeholder{
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@media only screen and (max-width:360px){
+  .note{
+    overflow: hidden;
+    margin: 10px 20px;
+  }
+  .note .MuiSvgIcon-root{
+    right: -115px;
+  }
+  .notes{
+    width: 38%;
+    padding: 5px;
+    margin: 10px 17px;
+  }
+  .notes .MuiSvgIcon-root{
+    right: -100px;
+    /* top: 10px; */
+  }
+} 
