@@ -33,6 +33,30 @@ code {
   text-align: center;
   /* margin: auto; */
 }
+.header .search{
+  float: right;
+  /* padding: 5px; */
+  margin: 5px;
+}
+.header .search input{
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-right: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+.header .search button{
+  padding: 8px;
+  border-radius: 12px;
+  background-color: blue;
+  font-weight: bold;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+.header .search button:hover{
+  background-color: yellow;
+}
 .note {
   border: 1px solid black;
   display: flex;
@@ -119,5 +143,11 @@ code {
   .notes .MuiSvgIcon-root{
     right: -100px;
     /* top: 10px; */
+  }
+  .header .search input{
+    font-size: 0.5rem;
+  }
+  .header .search button{
+    font-size: 0.5rem;
   }
 } 

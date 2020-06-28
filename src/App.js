@@ -16,9 +16,10 @@ const App = () => {
   });
   const [noteArr, setNoteArr] = useState([]);
   useEffect(() => {
-    localNote = localStorage.getItem("notes");
+    var localNote = localStorage.getItem("notes");
     if (localNote === null) {
       var noteObj = [];
+      console.log(noteObj);
     } else {
       noteObj = JSON.parse(localStorage.getItem("notes"));
     }

@@ -5,7 +5,11 @@ const Header = () => {
         <>
             <div className='header'>
                 <div className='logo'>
-                    <h3>QBT</h3>
+                    <h3>QB</h3>
+                </div>
+                <div className="search">
+                    <input id="srch" placeholder="Search" name="srch"></input>
+                    <button>Search</button>
                 </div>
             </div>
         </>
