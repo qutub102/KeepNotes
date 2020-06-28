@@ -1,25 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import CreateNotes from "./CreateNote";
 import Note from "./Note";
 
 const App = () => {
+  var localNote = localStorage.getItem("notes");
+  if (localNote === null) {
+    var noteObj = [];
+  } else {
+    noteObj = JSON.parse(localStorage.getItem("notes"));
+  }
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
-  
   const [noteArr, setNoteArr] = useState([]);
+  useEffect(() => {
+    localNote = localStorage.getItem("notes");
+    if (localNote === null) {
+      var noteObj = [];
+    } else {
+      noteObj = JSON.parse(localStorage.getItem("notes"));
+    }
+  }, [noteArr]);
   const [disnon, setdisnon] = useState(false);
   const addEvent = () => {
-    setNoteArr((prev) => {
-      if (note.title === "" || note.content === "") {
-        alert("Add Title And Note Properly");
-        return [...prev];
-      } else {
-        return [...prev, note];
-      }
-    });
+    // setNoteArr((prev) => {
+    //   if (note.title === "" || note.content === "") {
+    //     alert("Add Title And Note Properly");
+    //     return [...prev];
+    //   } else {
+    //     return [...prev, note];
+    //   }
+    // });
+    noteObj.push(note);
+    localStorage.setItem("notes", JSON.stringify(noteObj));
     setNote({
       title: "",
       content: "",
@@ -35,10 +50,17 @@ const App = () => {
     });
   };
   const deleteNote = (id) => {
-    setNoteArr((prev) => {
-      return prev.filter((arr, index) => {
-        return id !== index;
-      });
+    setNoteArr(() => {
+      // var removeIndex = noteObj
+      //   .map(function (item, index) {
+      //     return index;
+      //   })
+      //   .indexOf(id);
+
+      // remove object
+      noteObj.splice(id, 1);
+      localStorage.setItem("notes", JSON.stringify(noteObj));
+      return noteObj;  
     });
   };
   const show = () => {
@@ -60,7 +82,18 @@ const App = () => {
           val={disnon}
           valhide={hide}
         />
-        {noteArr.map((cval, index) => {
+        {/* {noteArr.map((cval, index) => {
+          return (
+            <Note
+              key={index}
+              id={index}
+              tit={cval.title}
+              con={cval.content}
+              delete={deleteNote}
+            />
+          );
+        })} */}
+        {noteObj.map((cval, index) => {
           return (
             <Note
               key={index}
