@@ -70,10 +70,26 @@ const App = () => {
   const hide = () => {
     setdisnon(false);
   };
+  const [srch,setsrch] = useState();
+  const srchEvent = (event) => {
+    let inputsrch = event.target.value;
+    setsrch(inputsrch);
+    let noteCard = document.getElementsByClassName('notes');
+    Array.from(noteCard).forEach(function(element){
+      let noteContent = element.getElementsByTagName('p')[0].innerText;
+      let noteTitle = element.getElementsByTagName('h3')[0].innerText;
+      if(noteContent.includes(inputsrch) || noteTitle.includes(inputsrch)){
+        element.style.display = "block";
+      }
+      else{
+        element.style.display = "none";
+      }
+    })
+  }
   return (
     <>
       <div className="div_main">
-        <Header />
+        <Header srchEven={srchEvent} search={srch}/>
         <CreateNotes
           inpEvt={inputEvent}
           add={addEvent}
