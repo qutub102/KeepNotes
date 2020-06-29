@@ -27,19 +27,17 @@ const App = () => {
   const [disnon, setdisnon] = useState(false);
   const addEvent = () => {
     // setNoteArr((prev) => {
-    //   if (note.title === "" || note.content === "") {
-    //     alert("Add Title And Note Properly");
-    //     return [...prev];
-    //   } else {
-    //     return [...prev, note];
-    //   }
-    // });
+      // });
+        if (note.title === "" || note.content === "") {
+          alert("Add Title And Note Properly");
+        }else{
     noteObj.push(note);
     localStorage.setItem("notes", JSON.stringify(noteObj));
     setNote({
       title: "",
       content: "",
     });
+  }
   };
   const inputEvent = (event) => {
     let { name, value } = event.target;
