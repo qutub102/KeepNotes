@@ -27,17 +27,17 @@ const App = () => {
   const [disnon, setdisnon] = useState(false);
   const addEvent = () => {
     // setNoteArr((prev) => {
-      // });
-        if (note.title === "" || note.content === "") {
-          alert("Add Title And Note Properly");
-        }else{
-    noteObj.push(note);
-    localStorage.setItem("notes", JSON.stringify(noteObj));
-    setNote({
-      title: "",
-      content: "",
-    });
-  }
+    // });
+    if (note.title === "" || note.content === "") {
+      alert("Add Title And Note Properly");
+    } else {
+      noteObj.push(note);
+      localStorage.setItem("notes", JSON.stringify(noteObj));
+      setNote({
+        title: "",
+        content: "",
+      });
+    }
   };
   const inputEvent = (event) => {
     let { name, value } = event.target;
@@ -59,7 +59,7 @@ const App = () => {
       // remove object
       noteObj.splice(id, 1);
       localStorage.setItem("notes", JSON.stringify(noteObj));
-      return noteObj;  
+      return noteObj;
     });
   };
   const show = () => {
@@ -68,26 +68,28 @@ const App = () => {
   const hide = () => {
     setdisnon(false);
   };
-  const [srch,setsrch] = useState();
+  const [srch, setsrch] = useState();
   const srchEvent = (event) => {
     let inputsrch = event.target.value;
     setsrch(inputsrch);
-    let noteCard = document.getElementsByClassName('notes');
-    Array.from(noteCard).forEach(function(element){
-      let noteContent = element.getElementsByTagName('p')[0].innerText;
-      let noteTitle = element.getElementsByTagName('h3')[0].innerText;
-      if(noteContent.toLowerCase().includes(inputsrch) || noteTitle.toLowerCase().includes(inputsrch)){
+    let noteCard = document.getElementsByClassName("notes");
+    Array.from(noteCard).forEach(function (element) {
+      let noteContent = element.getElementsByTagName("p")[0].innerText;
+      let noteTitle = element.getElementsByTagName("h3")[0].innerText;
+      if (
+        noteContent.toLowerCase().includes(inputsrch.toLowerCase()) ||
+        noteTitle.toLowerCase().includes(inputsrch.toLowerCase())
+      ) {
         element.style.display = "block";
-      }
-      else{
+      } else {
         element.style.display = "none";
       }
-    })
-  }
+    });
+  };
   return (
     <>
       <div className="div_main">
-        <Header srchEven={srchEvent} search={srch}/>
+        <Header srchEven={srchEvent} search={srch} />
         <CreateNotes
           inpEvt={inputEvent}
           add={addEvent}
