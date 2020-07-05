@@ -33,19 +33,19 @@ code {
   text-align: center;
   /* margin: auto; */
 }
-.header .search {
+.header .search{
   float: right;
   /* padding: 5px; */
   margin: 5px;
 }
-.header .search input {
+.header .search input{
   padding: 8px 10px;
   border-radius: 10px;
   margin-right: 8px;
   font-size: 1rem;
   outline: none;
 }
-.header .search button {
+.header .search button{
   padding: 8px;
   border-radius: 12px;
   background-color: blue;
@@ -54,7 +54,7 @@ code {
   outline: none;
   cursor: pointer;
 }
-.header .search button:hover {
+.header .search button:hover{
   background-color: yellow;
 }
 .note {
@@ -96,7 +96,7 @@ code {
   outline: none;
   cursor: pointer;
 }
-.note .MuiSvgIcon-root:hover {
+.note .MuiSvgIcon-root:hover{
   color: blue;
 }
 .notes {
@@ -120,50 +120,34 @@ code {
   cursor: pointer;
   font-size: 28px;
 }
-.notes button:hover {
+.notes button:hover{
   background-color: brown;
 }
-#title::placeholder {
+#title::placeholder{
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-@media only screen and (max-width: 425px) {
-  .notes {
-    margin: 10px 40px;
-    overflow: hidden;
-  }
-  .note .MuiSvgIcon-root {
-    right: -145px;
-  }
-  .notes {
-    width: 44%;
-    margin: 10px 10px;
-  }
-  .notes .MuiSvgIcon-root {
-    right: -135px;
-  }
-}
-@media only screen and (max-width: 360px) {
-  .note {
+@media only screen and (max-width:360px){
+  .note{
     overflow: hidden;
     margin: 10px 20px;
   }
-  .note .MuiSvgIcon-root {
+  .note .MuiSvgIcon-root{
     right: -115px;
   }
-  .notes {
+  .notes{
     width: 38%;
     padding: 5px;
     margin: 10px 17px;
   }
-  .notes .MuiSvgIcon-root {
+  .notes .MuiSvgIcon-root{
     right: -100px;
     /* top: 10px; */
   }
-  .header .search input {
+  .header .search input{
     font-size: 0.5rem;
   }
-  .header .search button {
+  .header .search button{
     font-size: 0.5rem;
   }
-}
+} 
