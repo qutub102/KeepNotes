@@ -127,7 +127,8 @@ code {
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-@media only screen and (max-width:360px){
+
+@media only screen and (max-width:475px){
   .note{
     overflow: hidden;
     margin: 10px 20px;
