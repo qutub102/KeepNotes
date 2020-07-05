@@ -76,7 +76,7 @@ const App = () => {
     Array.from(noteCard).forEach(function(element){
       let noteContent = element.getElementsByTagName('p')[0].innerText;
       let noteTitle = element.getElementsByTagName('h3')[0].innerText;
-      if(noteContent.toLowerCase().includes(inputsrch) || noteTitle.toLowerCase().includes(inputsrch)){
+      if(noteContent.includes(inputsrch) || noteTitle.includes(inputsrch)){
         element.style.display = "block";
       }
       else{
