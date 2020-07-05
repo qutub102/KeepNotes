@@ -6,7 +6,7 @@ const Header = (props) => {
     <>
       <div className="header">
         <div className="logo">
-          <h3>QB</h3>
+          <h3>QB Notes</h3>
         </div>
         <div className="search">
           <input
